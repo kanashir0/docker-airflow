@@ -1,0 +1,6 @@
+# -m Multithread
+# -c Compare files, if the files are identical it will not upload it
+# -d Mirrors the directory adding new files and removing the non existent files
+steps:
+  - name: gcr.io/cloud-builders/gsutil
+    args: ["-m", "rsync", "-c", "-d", "./dags", "gs://kana-composer-fake-bucket"]
